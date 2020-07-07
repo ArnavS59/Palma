@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class SpashScreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   @override
-  _SpashScreenState createState() => _SpashScreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SpashScreenState extends State<SpashScreen> {
+class _SplashScreenState extends State<SplashScreen> {
   void startTimer() {
     Timer(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacementNamed('/home');

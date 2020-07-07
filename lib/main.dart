@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import './home.dart';
-import './spash_screen.dart';
+import 'screens/splash_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: SpashScreen(),
+      home: SplashScreen(),
       routes: {
         // '/splash': (context)=> SplashScreen(),
         '/home': (context) => Home()
