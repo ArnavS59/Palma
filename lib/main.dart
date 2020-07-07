@@ -1,8 +1,9 @@
 //import 'dart:async';
 
 import 'package:flutter/material.dart';
-import './home.dart';
+//import './home.dart';
 import 'screens/splash_screen.dart';
+import 'package:Palma/items_overview_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -11,14 +12,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      //title: 'Flutter Demo',
       theme: new ThemeData(
         primarySwatch: Colors.green,
+        accentColor: Colors.orange,
+        fontFamily: 'Lato',
       ),
       home: SplashScreen(),
       routes: {
         // '/splash': (context)=> SplashScreen(),
-        '/home': (context) => Home()
+        '/home': (context) => ItemsOveriewScreen()
       },
     );
   }
