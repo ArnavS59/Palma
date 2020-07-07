@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Food extends StatelessWidget {
+class Food {
   // const FoodItem({Key key}) : super(key: key);
 
   final String id;
@@ -18,11 +18,4 @@ class Food extends StatelessWidget {
       @required this.description
       // @required this.spicyness
       });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: null,
-    );
-  }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Palma/screens/food_detail_screen.dart';
 
 class FoodItem extends StatelessWidget {
   //const FoodItem({Key key}) : super(key: key);
@@ -14,29 +15,35 @@ class FoodItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
-      child: GridTile(
-        child: Image.network(
-          imageUrl,
-          fit: BoxFit.cover,
-        ),
-        //header: , make the header the title and put the price in the footer
-        footer: GridTileBar(
-          backgroundColor: Colors.black87,
-          leading: IconButton(
-              icon: Icon(Icons.favorite),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context)
+              .pushNamed(FoodDetailScreen.routeName, arguments: id);
+        },
+        child: GridTile(
+          child: Image.network(
+            imageUrl,
+            fit: BoxFit.cover,
+          ),
+          //header: , make the header the title and put the price in the footer
+          footer: GridTileBar(
+            backgroundColor: Colors.black87,
+            leading: IconButton(
+                icon: Icon(Icons.favorite),
+                onPressed: null,
+                color: Theme.of(context).accentColor),
+            title: Text(
+              title,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.fade,
+            ),
+            trailing: IconButton(
+              icon: Icon(Icons.shopping_cart),
               onPressed: null,
-              color: Theme.of(context).accentColor),
-          title: Text(
-            title,
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.fade,
+              color: Theme.of(context).accentColor,
+            ),
+            // subtitle: Text(price),
           ),
-          trailing: IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: null,
-            color: Theme.of(context).accentColor,
-          ),
-          // subtitle: Text(price),
         ),
       ),
     );
