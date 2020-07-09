@@ -54,7 +54,34 @@ class CartItem extends StatelessWidget {
               ),
               title: Text(title),
               subtitle: Text("Total: \$${price * quantity}"),
-              trailing: Text("$quantity x"),
+              //   trailing: Text("$quantity x"),
+              trailing: Container(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    IconButton(
+                      onPressed: (quantity > 1)
+                          ? () => {
+                                Provider.of<Cart>(context, listen: false)
+                                    .addOrRemoveQuantity(foodid, false)
+                              }
+                          : () => {
+                                Provider.of<Cart>(context, listen: false)
+                                    .removeItem(foodid)
+                              },
+                      icon: Icon(Icons.remove, color: Colors.black),
+                    ),
+                    Text('${quantity}x'),
+                    IconButton(
+                      onPressed: () {
+                        Provider.of<Cart>(context, listen: false)
+                            .addOrRemoveQuantity(foodid, true);
+                      },
+                      icon: Icon(Icons.add, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
             ),
           )),
     );
