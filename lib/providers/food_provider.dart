@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/food.dart';
+import 'food.dart';
 
 class FoodProvider with ChangeNotifier {
   List<Food> _items = [
@@ -36,14 +36,38 @@ class FoodProvider with ChangeNotifier {
       description: "THis is a Spring ROll description",
     ),
   ];
+
+  //var _showFavouritesOnly = false;
+
   //will return a pointer at memory if this chnages then u get direct access to it, u might edit this and u will need this later
 
   List<Food> get items {
+    // if (_showFavouritesOnly) {
+    //   return _items.where((element) => element.isFavorite).toList();
+    //}
     return [..._items]; //returns a copy
   }
+
+  List<Food> get favoriteitems {
+    return _items.where((element) => element.isFavorite).toList();
+  }
+
+  // void showFavoritesOnly() {
+  //   _showFavouritesOnly = true;
+  //   notifyListeners();
+  // }
+
+  // void showAll() {
+  //   _showFavouritesOnly = false;
+  //   notifyListeners();
+  // }
 
   void addProduct() {
     //_items.add(value);
     notifyListeners();
   }
+
+  Food findById(String id) {
+    return _items.firstWhere((food) => food.id == id);
+  } //Core logic hidden here in the provider ckass so the logic stays pretty clewean
 }

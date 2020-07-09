@@ -11,15 +11,28 @@ class ItemsGrid extends StatelessWidget {
 
   // final List<Food> loadedItems;
 
+  final bool showFavs;
+  ItemsGrid(this.showFavs);
+
   @override
   Widget build(BuildContext context) {
     final foodData = Provider.of<FoodProvider>(context);
-    final foods = foodData.items;
+    final foods = showFavs ? foodData.favoriteitems : foodData.items;
+
     return GridView.builder(
       padding: const EdgeInsets.all(10),
       itemCount: foods.length,
-      itemBuilder: (ctx, i) => FoodItem(
-          foods[i].id, foods[i].title, foods[i].price, foods[i].imageUrl),
+      itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+        //automatically cleans data , so overflow of data is prevented and memory leaks
+        // create: (c) => foods[i],
+        value: foods[i],
+        child: FoodItem(
+            //foods[i].id,
+            //foods[i].title,
+            //foods[i].price,
+            // foods[i].imageUrl
+            ),
+      ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 3 / 2,
