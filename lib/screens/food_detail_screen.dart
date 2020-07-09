@@ -18,6 +18,32 @@ class FoodDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(loadedFood.title),
       ),
+      body: SingleChildScrollView(
+        child: Column(children: <Widget>[
+          Container(
+            height: 300,
+            width: double.infinity,
+            child: Image.network(loadedFood.imageUrl),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            "\$${loadedFood.price}",
+            style: TextStyle(color: Colors.grey, fontSize: 20),
+          ),
+          SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              loadedFood.description,
+              textAlign: TextAlign.center,
+              softWrap: true,
+            ),
+          )
+        ]),
+      ),
     );
   }
 }

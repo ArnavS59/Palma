@@ -1,5 +1,10 @@
+import 'package:Palma/screens/cart_screen.dart';
+import 'package:Palma/widgets/app_drawer.dart';
 import 'package:Palma/widgets/items_grid.dart';
 import 'package:flutter/material.dart';
+import '../widgets/badge.dart';
+import 'package:provider/provider.dart';
+import '../providers/cart.dart';
 
 enum FilterOptions {
   Favorites,
@@ -24,16 +29,6 @@ class _ItemsOveriewScreenState extends State<ItemsOveriewScreen> {
         title: Text("Palma"),
         actions: <Widget>[
           PopupMenuButton(
-            itemBuilder: (_) => [
-              PopupMenuItem(
-                child: Text("only favourites"),
-                value: FilterOptions.Favorites,
-              ),
-              PopupMenuItem(
-                child: Text("Show all"),
-                value: FilterOptions.All,
-              ),
-            ],
             onSelected: (FilterOptions selectedValue) {
               setState(() {
                 //rebuilds UI
@@ -48,9 +43,30 @@ class _ItemsOveriewScreenState extends State<ItemsOveriewScreen> {
               });
             },
             icon: Icon(Icons.more_vert),
-          )
+            itemBuilder: (_) => [
+              PopupMenuItem(
+                child: Text("only favourites"),
+                value: FilterOptions.Favorites,
+              ),
+              PopupMenuItem(
+                child: Text("Show all"),
+                value: FilterOptions.All,
+              ),
+            ],
+          ),
+          Consumer<Cart>(
+              builder: (_, cartData, ch) => Badge(
+                    child: IconButton(
+                      icon: Icon(Icons.shopping_cart),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(CartScreen.routeName);
+                      },
+                    ),
+                    value: cartData.itemCount.toString(),
+                  ))
         ],
       ),
+      drawer: AppDrawer(),
       body: ItemsGrid(_showFavsOnly),
     );
   }
