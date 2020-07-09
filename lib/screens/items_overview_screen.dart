@@ -26,7 +26,10 @@ class _ItemsOveriewScreenState extends State<ItemsOveriewScreen> {
     // final foodContainer = Provider.of<FoodProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Palma"),
+        title: Text(
+          "Palma",
+          textAlign: TextAlign.justify,
+        ),
         actions: <Widget>[
           PopupMenuButton(
             onSelected: (FilterOptions selectedValue) {
