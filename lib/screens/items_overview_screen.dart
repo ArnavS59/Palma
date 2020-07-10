@@ -48,7 +48,7 @@ class _ItemsOveriewScreenState extends State<ItemsOveriewScreen> {
             icon: Icon(Icons.more_vert),
             itemBuilder: (_) => [
               PopupMenuItem(
-                child: Text("only favourites"),
+                child: Text("Only Favourites"),
                 value: FilterOptions.Favorites,
               ),
               PopupMenuItem(
