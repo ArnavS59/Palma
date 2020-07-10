@@ -35,6 +35,54 @@ class FoodProvider with ChangeNotifier {
           'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
       description: "THis is a Spring ROll description",
     ),
+    Food(
+      id: "p5",
+      title: "CHickenShwarma",
+      price: 10.00,
+      imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      description: "THis is a chicken swahrma description",
+    ),
+    Food(
+      id: "p6",
+      title: "CHickenShwarma",
+      price: 10.00,
+      imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      description: "THis is a chicken swahrma description",
+    ),
+    Food(
+      id: "p7",
+      title: "CHickenShwarma",
+      price: 10.00,
+      imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      description: "THis is a chicken swahrma description",
+    ),
+    Food(
+      id: "p8",
+      title: "CHickenShwarma",
+      price: 10.00,
+      imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      description: "THis is a chicken swahrma description",
+    ),
+    Food(
+      id: "p9",
+      title: "CHickenShwarma",
+      price: 10.00,
+      imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      description: "THis is a chicken swahrma description",
+    ),
+    Food(
+      id: "p10",
+      title: "CHickenShwarma",
+      price: 10.00,
+      imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      description: "THis is a chicken swahrma description",
+    ),
   ];
 
   //var _showFavouritesOnly = false;
