@@ -57,17 +57,47 @@ class _ItemsOveriewScreenState extends State<ItemsOveriewScreen> {
               ),
             ],
           ),
-          Consumer<Cart>(
-              builder: (_, cartData, ch) => Badge(
-                    child: IconButton(
-                      icon: Icon(Icons.shopping_cart),
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(CartScreen.routeName);
-                      },
-                    ),
-                    value: cartData.itemCount.toString(),
-                  ))
+          // FloatingActionButton(
+          //   onPressed: () {
+          //     Navigator.of(context).pushNamed(CartScreen.routeName);
+          //   },
+          //   child: Consumer<Cart>(
+          //       builder: (_, cartData, ch) => Badge(
+          //             child: IconButton(
+          //               icon: Icon(Icons.shopping_cart),
+          //               onPressed: () {
+          //                 Navigator.of(context).pushNamed(CartScreen.routeName);
+          //               },
+          //             ),
+          //             value: cartData.itemCount.toString(),
+          //           )),
+          // )
         ],
+      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Align(
+        alignment: Alignment.bottomRight,
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(0, 0, 5, 25),
+          child: FloatingActionButton(
+            backgroundColor: Theme.of(context).primaryColor,
+            elevation: 10,
+            clipBehavior: Clip.antiAlias,
+            onPressed: () {
+              Navigator.of(context).pushNamed(CartScreen.routeName);
+            },
+            child: Consumer<Cart>(
+                builder: (_, cartData, ch) => Badge(
+                      child: IconButton(
+                        icon: Icon(Icons.shopping_cart),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(CartScreen.routeName);
+                        },
+                      ),
+                      value: cartData.itemCount.toString(),
+                    )),
+          ),
+        ),
       ),
       drawer: AppDrawer(),
       body: ItemsGrid(_showFavsOnly),

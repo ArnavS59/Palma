@@ -35,6 +35,7 @@ class ItemsGrid extends StatelessWidget {
       ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
+          //maxCrossAxisExtent: 400,
           childAspectRatio: 3 / 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10),
