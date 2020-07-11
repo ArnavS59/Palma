@@ -22,7 +22,7 @@ class Food with ChangeNotifier {
   });
 
   void toggleFavoriteStatus() {
-    isFavorite = !isFavorite;
     notifyListeners();
+    isFavorite = !isFavorite;
   }
 }
