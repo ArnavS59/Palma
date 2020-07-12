@@ -15,9 +15,12 @@ class FoodDetailScreen extends StatelessWidget {
     final loadedFood =
         Provider.of<FoodProvider>(context, listen: false).findById(foodId);
     final cart = Provider.of<Cart>(context, listen: false);
+    final globalKey = GlobalKey<ScaffoldState>();
+
     //This is how the food you selected passes the data to the overview screen using providers it checks the id which was passed earlier using modalroute. Return true if the id of the product u looking at is the id you get in through the route.findbyUD in provider function logic sperated to make clean.
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      key: globalKey,
       backgroundColor: Colors.green,
       appBar: AppBar(
         elevation: 0,
@@ -28,7 +31,13 @@ class FoodDetailScreen extends StatelessWidget {
           //hero tag here
           height: size.height * 0.25,
           width: double.infinity,
-          child: Image.network(loadedFood.imageUrl),
+          child: ClipRRect(
+            // borderRadius: BorderRadius.circular(300),
+            child: Image.network(
+              loadedFood.imageUrl,
+              //  fit: BoxFit.fill,
+            ),
+          ),
         ),
         // SizedBox(
         //   height: 10,
@@ -113,6 +122,16 @@ class FoodDetailScreen extends StatelessWidget {
                   onPressed: () {
                     cart.addItems(
                         loadedFood.id, loadedFood.price, loadedFood.title);
+                    final snackbar = // Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                      content: Text(
+                        "Added item to cart",
+                        textAlign: TextAlign.center,
+                      ),
+                      duration: Duration(seconds: 2),
+                    );
+                    globalKey.currentState.showSnackBar(snackbar);
+                    //  );
                   },
                   child: Row(children: <Widget>[
                     Padding(
@@ -127,7 +146,10 @@ class FoodDetailScreen extends StatelessWidget {
                       icon: Icon(Icons.shopping_cart),
                       onPressed: () {
                         cart.addItems(
-                            loadedFood.id, loadedFood.price, loadedFood.title);
+                          loadedFood.id,
+                          loadedFood.price,
+                          loadedFood.title,
+                        );
                       },
                       color: Theme.of(context).accentColor,
                     ),
