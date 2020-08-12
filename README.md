@@ -1,16 +1,24 @@
 # Palma
 
-A new Flutter project.
+A shopping app where users can add products to their basket order food items and much more.
 
-## Getting Started
+```
+git clone "https://github.com/ArnavS59/Palma"
+```
 
-This project is a starting point for a Flutter application.
+## Some UI Screens
 
-A few resources to get you started if this is your first Flutter project:
+<p float="left">
+  <img src="https://imgur.com/Utc4Xdy.png" height=500  />
+  
+   <img src="https://i.imgur.com/yr95yAe.png" height=500  />
+   <img src="https://i.imgur.com/zrEGklQ.png" height=500  />
+  
+   
+</br>
+<img src="https://i.imgur.com/mosVLoF.png" height=500  />
+ <img src="https://i.imgur.com/Mh1Ntwd.png" height=500  />
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+</p>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
