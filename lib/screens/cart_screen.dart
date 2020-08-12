@@ -15,6 +15,16 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("My Cart"),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                const Color(0xfff79d00),
+                const Color(0xff56ab2f),
+              ])),
+        ),
       ),
       body: Column(
         children: <Widget>[

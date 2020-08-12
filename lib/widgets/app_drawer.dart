@@ -9,10 +9,37 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: <Widget>[
-          AppBar(
-            title: Text("Hello"),
-            automaticallyImplyLeading: false,
+          UserAccountsDrawerHeader(
+            accountName: Text("Arnav Name"),
+            accountEmail: Text("arnav123456@testing.com"),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                  const Color(0xfff79d00),
+                  const Color(0xff56ab2f),
+                ])),
+            currentAccountPicture: CircleAvatar(
+              backgroundColor: Colors.white70,
+              child: Text(
+                "A",
+                style: TextStyle(fontSize: 40.0),
+              ),
+            ),
           ),
+          // AppBar(
+          //   flexibleSpace: Container(
+          //     decoration: new BoxDecoration(
+          //       gradient: new LinearGradient(
+          //         colors: [Colors.cyan, Colors.yellow],
+          //         stops: [0.5, 1.0],
+          //       ),
+          //     ),
+          //   ),
+          //   title: Text("Hello1"),
+          //   automaticallyImplyLeading: false,
+          // ),
           Divider(),
           ListTile(
               leading: Icon(Icons.shop),

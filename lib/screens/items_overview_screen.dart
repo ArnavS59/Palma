@@ -26,6 +26,16 @@ class _ItemsOveriewScreenState extends State<ItemsOveriewScreen> {
     // final foodContainer = Provider.of<FoodProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                const Color(0xfff79d00),
+                const Color(0xff56ab2f),
+              ])),
+        ),
         title: Text(
           "Palma",
           textAlign: TextAlign.justify,

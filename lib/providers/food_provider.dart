@@ -115,6 +115,10 @@ class FoodProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  // Future<void> fetchandSetProducts() async {
+
+  // }
+
   Food findById(String id) {
     return _items.firstWhere((food) => food.id == id);
   } //Core logic hidden here in the provider ckass so the logic stays pretty clewean
