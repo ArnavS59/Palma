@@ -3,7 +3,7 @@
 A shopping app where users can add products to their basket order food items and much more.
 
 ```
-git clone "https://github.com/ArnavS59/Palma"
+git clone https://github.com/ArnavS59/Palma
 ```
 
 ## Some UI Screens
